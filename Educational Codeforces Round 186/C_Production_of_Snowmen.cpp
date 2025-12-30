@@ -19,8 +19,29 @@ void solve() {
     for(auto &x: c){
         cin>>x;
     }
-    
+    ll cntAB=0,cntBC=0;
+    for(int i=0;i<n;i++){
+        bool validAB = true;
+        for(int j=0;j<n;j++){
+            if(a[j]>=b[(i+j)%n]){
+                validAB = false;
+                break;
+            }
+        }
+        if(validAB) cntAB++;
+    }
+    for(int i=0;i<n;i++){
+        bool validBC = true;
+        for(int j=0;j<n;j++){
+            if(b[j]>=c[(i+j)%n]){
+                validBC = false;
+                break;
+            }
+        }
+        if(validBC) cntBC++;
+    }
 
+    cout<<n*cntAB*cntBC<<endl;
 
 
 }
