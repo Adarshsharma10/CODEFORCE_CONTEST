@@ -9,81 +9,32 @@ void solve() {
     cin >> n;
     string s;
     cin>>s;
-    int c0=0,c1=0;
+    int c0=0;
     for(int i=0;i<n;i++){
         if(s[i]=='0'){
             c0++;
         }
-        else{
-            c1++;
-        }
     }
-    if(c0 == 0 || c1 ==0){
+    if(is_sorted(s.begin(),s.end())){
         cout<<"Bob"<<endl;
         return;
     }
-    
-
-
     vector<int> idx;
-    bool flag2=false;
-    for(int i=1;i<n;i++){
-        if(s[i-1]<s[i] && flag2){
-            idx.push_back(i);
-            break;
-        }
-        if(s[i-1]>=s[i]){
-            flag2=true;
-            idx.push_back(i);
-        }
-        if(i==n-1){
+    for(int i=0;i<c0;i++){
+        if(s[i]=='1'){
             idx.push_back(i+1);
         }
     }
-        
-        
-
-
-    int r=0;
-    int cnt=0;
-    for(int l=r+1;l<n;l++){
-        bool flag = false;
-        if(s[l-1]>=s[l]){
-            r++;
-            flag=true;
-        }
-        if(flag){
-            r++;
-            cnt++;
-            if(r<n){
-                bool ok = is_sorted(s.begin()+r,s.end());
-                if(ok){
-                    break;
-                }
-            }
-            else{
-                break;
-            }
+    for(int i=c0;i<n;i++){
+        if(s[i]=='0'){
+            idx.push_back(i+1);
         }
     }
-
-
-
-    if(cnt==0){
-        cout<<"Bob"<<endl;
-    }
-    else if(!(cnt&1)){
-        cout<<"Bob"<<endl;
-    }
-    else{
-        cout<<"Alice"<<endl;
-        cout<<idx.size()<<endl;
-        for(auto &y : idx){
-            cout<<y<<" ";
-        }cout<<endl;
-    }
-
-
+    cout<<"Alice"<<endl;
+    cout<<idx.size()<<endl;
+    for(int i=0;i<idx.size();i++){
+        cout<<idx[i]<<" ";
+    }cout<<endl;
 }
 
 int main() {
@@ -98,3 +49,5 @@ int main() {
 
     return 0;
 }
+
+// Successfully Submitted
