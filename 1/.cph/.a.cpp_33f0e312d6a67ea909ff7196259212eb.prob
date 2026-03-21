@@ -1,1 +1,0 @@
-{"name":"Local: a","url":"d:\\CODEFORCE_CONTEST\\1\\a.cpp","tests":[{"id":1773671932900,"input":"3\n4\nRLRL\n6\nRRRRRL\n9\nRRLRRRRRL\n","output":"2\n6\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CODEFORCE_CONTEST\\1\\a.cpp","group":"local","local":true}
