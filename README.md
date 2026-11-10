@@ -1,4 +1,4 @@
-This repository contains my solutions to Codeforces contest problems, primarily written in C++.
+This repository contains my solutions to live Codeforces contest problems, primarily written in C++.
 
 The code here is focused on getting AC during contests, so some solutions may be rushed, compact, or not fully optimized. Cleanups or improvements may be added later.
 
